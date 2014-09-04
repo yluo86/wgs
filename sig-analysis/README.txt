@@ -1,4 +1,5 @@
 ####Categorising Signals ####
+# Scripts in this folder assumes all essential data files in working directory: /lustre/scratch113/projects/crohns/2013Aug07/assoc/beagle-v2
 
 # 1. low-freq and rare variants in known IBD regions from 3 sources:
 #	a). 163 loci from Jostins et al
@@ -14,4 +15,7 @@
 			# http://grch37.ensembl.org/biomart/martview/
 			# out-gene.txt
 									
-		# (3). After which using sig-locations.Rscript to get overlapping regions. For intergenic variants ±5kbp are taken for the given BP
+		# (3). After which using sig-locations.R to get overlapping regions. For intergenic variants ±5kbp are taken for the given BP
+
+	## To search for variants that lies in known regions, using search-known-sigs.R
+
