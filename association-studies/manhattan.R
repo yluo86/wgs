@@ -1,4 +1,4 @@
-manhattan<-function(dataframe, colors=c("gray10", "gray50"), ymax="max", limitchromosomes=1:23, suggestiveline=-log10(1e-5), genomewideline=-log10(5e-8), annotate=NULL,pch=20, ...) {
+manhattan<-function(dataframe, colors=c("darkblue", "lightblue"),pt.cex=0.45,pch=21,cex.axis=0.95,gridlines=F,gridlines.col='gray83',gridlines.lty=1,gridlines.lwd=1, ymax="max", limitchromosomes=1:23, suggestiveline=-log10(1e-5), genomewideline=-log10(5e-8), annotate=NULL, ...) {
 
 	    d=dataframe
     if (!("CHR" %in% names(d) & "BP" %in% names(d) & "P" %in% names(d))) stop("Make sure your data frame contains columns CHR, BP, and P")
@@ -32,9 +32,9 @@ manhattan<-function(dataframe, colors=c("gray10", "gray50"), ymax="max", limitch
 				        }
 			        
 			        if (numchroms==1) {
-					        with(d, plot(pos, logp, ylim=c(0,ymax), ylab=expression(-log[10](italic(p))), xlab=paste("Chromosome",unique(d$CHR),"position"), ...))
+					        with(d, plot(pos, logp, ylim=c(0,ymax), ylab=expression(-log[10](italic(p))), xlab=paste("Chromosome",unique(d$CHR),"position"),pch=20, ...))
 				    }   else {
-					            with(d, plot(pos, logp, ylim=c(0,ymax), ylab=expression(-log[10](italic(p))), xlab="Chromosome", xaxt="n", type="n", ...))
+					            with(d, plot(pos, logp, ylim=c(0,ymax), ylab=expression(-log[10](italic(p))), xlab="Chromosome", xaxt="n", type="n",pch=20, ...))
 				            axis(1, at=ticks, lab=unique(d$CHR), ...)
 					            icol=1
 					            for (i in unique(d$CHR)) {
